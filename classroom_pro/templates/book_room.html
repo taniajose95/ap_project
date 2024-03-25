@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Room</title>
+</head>
+<body>
+    <h1>Book Room - {{ room.RoomName }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="user_id" value="{{ request.user.id }}">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required><br>
+        <label for="time_slot">Time Slot</label>
+        <select id="time_slot" name="time_slot" required>
+            <option value="0900-1100">09:00 - 11:00</option>
+            <option value="1100-1300">11:00 - 13:00</option>
+            <!-- Add more time slots as needed -->
+        </select><br>
+        <button type="submit">Book</button>
+    </form>
+</body>
+</html>
