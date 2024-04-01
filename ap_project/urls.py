@@ -16,13 +16,21 @@ Including another URLconf
 """
 from django.urls import path
 from classroom_pro import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('login/', views.login_view, name='login'),
-    path('rooms/', views.room_list, name='room_list'),
-    path('room/<int:room_id>/book/', views.book_room, name='book_room'),
-    # Add more URL patterns for other views as needed
-]
+    path('', views.login, name='login'),
+    path('login/', views.login, name='login'),
+    path('signup/', views.signup, name='signup'),
+    path('home/', views.index, name='index'),
+    path('view-rooms/', views.room_list, name='room_list'),
+    path('manage-booking/', views.manage_booking, name='manage_booking'),
+    #path('notification/', views.notification, name='notification'),
+    path('book-room/<int:room_id>/', views.book_room, name='book_room'),
+    path('cancel-booking/<int:booking_id>/', views.cancel_booking, name='cancel_booking'),
+    path('modify-booking/<int:booking_id>/', views.modify_booking, name='modify_booking'),
+] + static(settings.STATIC_URL)
 
 

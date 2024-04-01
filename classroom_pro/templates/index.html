@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classroom Pro - Home</title>
+    <title>Home - ClassRoomPro</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
 </head>
 <body>
-    <h1>{{ welcome_message }}</h1>
-    <!-- Add more content here as needed -->
+    <header>
+        {% load static %}
+        <img src="{% static 'classroom_pro/images/ClassRoom-Pro.png' %}" alt="ClassRoomPro Logo">
+        <h1>ClassRoomPro</h1>
+    </header>
+    <h2>Home</h2>
+    <a href="{% url 'view_rooms' %}"><button>View Rooms</button></a>
+    <a href="{% url 'manage_booking' %}"><button>Manage Booking</button></a>
+    <a href="{% url 'notification' %}"><button>Notification</button></a>
 </body>
 </html>
