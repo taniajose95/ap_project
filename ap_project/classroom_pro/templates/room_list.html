@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Rooms - ClassRoomPro</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        {% load static %}
+        <img src="{% static 'classroom_pro/images/ClassRoom-Pro.png' %}" alt="ClassRoomPro Logo">
+        <h1>ClassRoomPro</h1>
+    </header>
+    <h2>View Rooms</h2>
+    <ul>
+        {% for room in rooms %}
+        <li>{{ room.RoomName }} - Capacity: {{ room.Capacity }} | Location: {{ room.Location }} <a href="{% url 'book_room' room.RoomID %}">Book</a></li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'manage_booking' %}">Manage Bookings</a></p>
+</body>
+</html>

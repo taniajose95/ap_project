@@ -6,6 +6,8 @@ class User(models.Model):
     Email = models.EmailField(unique=True)
     Role = models.CharField(max_length=30)
     Department = models.CharField(max_length=100, blank=True, null=True)  # Only for faculty
+    user_password = models.CharField(max_length=100)
+
 
     def __str__(self):
         return self.Name

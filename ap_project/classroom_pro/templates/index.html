@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - ClassRoomPro</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        {% load static %}
+        <img src="{% static 'classroom_pro/images/ClassRoom-Pro.png' %}" alt="ClassRoomPro Logo">
+        <h1>ClassRoomPro</h1>
+    </header>
+    <h2>Home</h2>
+    <a href="{% url 'view_rooms' %}"><button>View Rooms</button></a>
+    <a href="{% url 'manage_booking' %}"><button>Manage Booking</button></a>
+    <a href="{% url 'notification' %}"><button>Notification</button></a>
+</body>
+</html>
